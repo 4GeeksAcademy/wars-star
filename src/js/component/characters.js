@@ -1,16 +1,15 @@
 import React, {useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import PropTypes from "prop-types";
 
 
-const Characters = () => {
+const Characters = props => {
     const {store, actions} = useContext(Context); // para manejar data de flux
-    useEffect(() => {
-		actions.obtenerPersonajes();
-	}, []);
+    
     return (
         <div className="container-fluid w-100 row">
-            <div class="card col-3 px-0" style={{width: "18rem;"}}>
+            <div class="card col-3 px-0 mx-1" style={{width: "18rem;"}}>
                 <img src="https://img.particlenews.com/img/id/2WM95P_0n0JJ8NK00?type=thumbnail_1024x512" class="card-img-top mx-0" alt="..."/>
                 <div class="card-body">
                     <h5 class="card-title">Luke Skywalker</h5>
@@ -22,6 +21,10 @@ const Characters = () => {
             </div>
         </div>
     )
+}
+
+Characters.PropTypes = {
+    name
 }
 
 export default Characters;

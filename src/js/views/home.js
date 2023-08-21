@@ -11,11 +11,10 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 
-	const [state, setState] = useState({
-
-	});
+	const [state, setState] = useState({});
 	useEffect(() => {
 		actions.obtenerplanetas();
+		actions.obtenerPersonajes();
 	}, []);
 	return (
 		<div className="text-center mt-5 container ">
@@ -27,15 +26,9 @@ export const Home = () => {
 						population={item.population}
 						terrain={item.terrain}
 						id={index}
-
-
-
 					/>
-
 				))}
 			</ul>
-
 		</div>
-
 	);
 };
