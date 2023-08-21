@@ -76,11 +76,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			agregarFavorito: (name) => {
-
-				setStore({ favoritos: name });				
+				console.log(name);
+			const objeto={
+				id:getStore().length, name
+			}
+				setStore({ favoritos: [...getStore().favoritos, name] });
+								
 					
 			
 			},
+			
 			loadSomeDataCristian: () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
