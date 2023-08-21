@@ -1,7 +1,13 @@
-import React from "react";
+import React, {useEffect, useContext} from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+
 
 const Characters = () => {
+    const {store, actions} = useContext(Context); // para manejar data de flux
+    useEffect(() => {
+		actions.obtenerPersonajes();
+	}, []);
     return (
         <div className="container-fluid w-100 row">
             <div class="card col-3 px-0" style={{width: "18rem;"}}>
