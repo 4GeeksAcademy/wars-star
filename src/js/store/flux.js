@@ -69,18 +69,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
-				
-				if (type == "vehicles" || type == "planets") {
-					const data = await fetch("https://swapi.dev/api/" + type);
+
+				if (type !== "characters") {
+					const data = await fetch("https://swapi.dev/api/" + type + "/" + id);
 					const response = await data.json();
-					setStore({ details: response.results })
+					setStore({ details: response })
 				} else {
-					const data = await fetch("https://swapi.dev/api/people/" + type);
+					const data = await fetch("https://swapi.dev/api/people/" + id);
 					const response = await data.json();
-					setStore({ details: response.results })
+					setStore({ details: response })
 				}
-				
-				
+
+
 
 			},
 			changeColor: (index, color) => {
