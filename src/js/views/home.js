@@ -53,10 +53,11 @@ export const Home = () => {
 					name={item.name}
 					model={item.model}
 					passengers={item.passengers}
-					id={index}
+					id={index + 1}
 				/>
 
 			)}
+			
 
 
 		</div>
