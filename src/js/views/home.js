@@ -3,6 +3,7 @@ import "../../styles/home.css";
 import Planets from "../component/planets.js";
 import { Context } from "../store/appContext.js";
 import { Link } from "react-router-dom";
+import Vehicles from "../component/vehicles"
 
 import { Navbar } from "../component/navbar";
 import Vehicles from "../component/vehicles";
@@ -15,7 +16,10 @@ export const Home = () => {
 	useEffect(() => {
 		actions.obtenerplanetas();
 		actions.obtenerPersonajes();
+		actions.obtenerVehiculosClaudia();
 	}, []);
+
+
 	return (
 		<div className="text-center mt-5 container ">
 
@@ -29,6 +33,21 @@ export const Home = () => {
 					/>
 				))}
 			</ul>
+
+
+			{/* //vechículos */}
+			{store.vehiculos.map((item, index) =>
+
+				<Vehicles
+					name={item.name}
+					model={item.model}
+					passengers={item.passengers}
+					id={index}
+				/>
+
+			)}
+
+
 		</div>
 	);
 };

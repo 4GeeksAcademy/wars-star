@@ -24,7 +24,7 @@ const Characters = props => {
 }
 
 Characters.PropTypes = {
-    name
+   
 }
 
 export default Characters;

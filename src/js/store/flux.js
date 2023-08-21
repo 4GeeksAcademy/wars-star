@@ -16,16 +16,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 			], 
 
 			characters: []
+			,
+
+			vehiculos: []
+
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			loadSomeDataClaudia: () => {
+			obtenerVehiculosClaudia: async () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+				try {
+					let response = await fetch("https://swapi.dev/api/vehicles", {
+						method: "GET"
+					});
+
+					let data = await response.json();
+					console.log(data.results);
+					setStore({ vehiculos: data.results });
+
+
+				} catch (error) {
+					console.log(error)
+				}
+
 			},
 			obtenerPersonajes: async () => {
 				/**
