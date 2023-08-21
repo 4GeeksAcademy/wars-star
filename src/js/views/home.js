@@ -1,14 +1,10 @@
-import React from "react";
-
+import React, { useState, useEffect, useContext } from "react";
 import "../../styles/home.css";
-
-import { Navbar } from "../component/navbar";
-import Planets from "../component/planets";
-import Vehicles from "../component/vehicles";
-import Characters from "../component/characters";
+import Planets from "../component/planets.js";
+import { Context } from "../store/appContext.js";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
-
 	const { store, actions } = useContext(Context);
 
 
@@ -19,44 +15,24 @@ export const Home = () => {
 		actions.obtenerplanetas();
 	}, []);
 	return (
+		<div className="text-center mt-5 container ">
 
-	<div className="mt-5">
-		<ul className=" m-0 p-0 d-flex flex-wrap horizontal-scrollable" id="contact-list"  >
-			{store.Planets.map((item, index) => (
-				<Planets
-					name={item.name}
-					population={item.population}
-					terrain={item.terrain}
-					id={index}
-
-
-
-				/>
-
-			))}
-		</ul>
-
-		<Characters
+			<ul className=" m-0 p-0 d-flex flex-wrap horizontal-scrollable" id="contact-list"  >
+				{store.Planets.map((item, index) => (
+					<Planets
+						name={item.name}
+						population={item.population}
+						terrain={item.terrain}
+						id={index}
 
 
 
+					/>
 
+				))}
+			</ul>
 
+		</div>
 
-
-
-
-		/>
-		<Vehicles
-
-
-
-
-
-
-
-
-
-		/>
-	</div>
-)}
+	);
+};

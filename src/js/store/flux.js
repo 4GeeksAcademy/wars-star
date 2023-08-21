@@ -30,14 +30,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
-			obtenerplanetas: async function (setStore) {
+			obtenerplanetas: async function () {
 				//accion, funcion que puedo volver a utilizar cuando quiera
 				try {
-					let response = await fetch("https://www.swapi.tech/api/planets/1"); //esto me regresa una respuesta, que la guerdo en un espacio de memoira
+					let response = await fetch("https://swapi.dev/api/planets"); //esto me regresa una respuesta, que la guerdo en un espacio de memoira
 					//le digo que espere por esa respuesta
 					let data = await response.json(); //le digo que convierta esa respuesta en un jason y lo guardo en un espacio de memoira y que espere por la convercion de esa respuesta
 					console.log(data);
-					setStore({ Planets: data }); //({propiedad:el valor que quiero actuaizar})
+					setStore({ Planets: data.results }); //({propiedad:el valor que quiero actuaizar})
 				} catch (error) {
 					console.log(error);
 				}
