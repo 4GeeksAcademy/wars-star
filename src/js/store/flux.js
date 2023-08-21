@@ -76,7 +76,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			agregarFavorito: (name) => {
-				e.preventDefault()
+
 				setStore({ favoritos: name });				
 					
 			
