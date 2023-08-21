@@ -17,7 +17,7 @@ const Characters = props => {
                     <p class="card-text my-0" id="p-datos">Hair Color: <span>{props.haircolor}</span></p>
                     <p class="card-text">Eye Color: <span>{props.eyecolor}</span></p>
                     <div className="d-flex justify-content-between">
-                        <Link to="#" class="btn btn-outline-primary">Learn More!</Link>
+                        <Link to={"/details/characters/" + props.id} class="btn btn-outline-primary">Learn More!</Link>
                         <button className="btn btn-outline-warning">
                             <i class="fa fa-heart"></i>
                         </button>
