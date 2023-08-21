@@ -1,6 +1,15 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+
+
+
+
+
+
+			details: [
+
+			],
 			demo: [
 				{
 					title: "FIRST",
@@ -39,10 +48,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
 			},
-			loadSomeDataCristian: () => {
+			getDetails: async (type, id) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+				
+				if (type == "vehicles" || type == "planets") {
+					const data = await fetch("https://swapi.dev/api/" + type);
+					const response = await data.json();
+					setStore({ details: response.results })
+				} else {
+					const data = await fetch("https://swapi.dev/api/people/" + type);
+					const response = await data.json();
+					setStore({ details: response.results })
+				}
+				
+				
+
 			},
 			changeColor: (index, color) => {
 				//get the store

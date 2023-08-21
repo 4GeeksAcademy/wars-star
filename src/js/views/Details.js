@@ -1,8 +1,21 @@
-
-/* NO OLVIDES CAMBIAR EL REACT ROUTER DOM */
-import React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { Context } from "../store/appContext";
+import { useParams, useLocation } from 'react-router-dom';
 
 export const Details = () => {
+    const { store, actions } = useContext(Context);
+    const [info, setInfo] = useState([]);
+
+    const { id } = useParams();
+    const pathName = useLocation().pathname;
+
+    useEffect(() => {
+        if (pathName.includes("characters")) actions.getDetails("characters", id);
+        if (pathName.includes("planets")) actions.getDetails("planets", id);
+        if (pathName.includes("vehicles")) actions.getDetails("vehicles", id);
+        console.log(store.details);
+    }, [id]);
+
     return (
         <div className="container align-items-center h-100">
             <div className="d-flex">
