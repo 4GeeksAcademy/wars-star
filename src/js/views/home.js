@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import "../../styles/home.css";
-import Planets from "../component/planets.js";
 import { Context } from "../store/appContext.js";
 import { Link } from "react-router-dom";
-import Vehicles from "../component/vehicles"
-
+import Planets from "../component/planets";
+import Vehicles from "../component/vehicles";
 import { Navbar } from "../component/navbar";
 import Characters from "../component/characters";
 export const Home = () => {

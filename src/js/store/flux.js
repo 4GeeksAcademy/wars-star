@@ -1,7 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			details: [],
 			Planets: [],
+
+			favoritos: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -73,15 +76,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error);
 				}
 			},
-			loadSomeDataAgustin: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+			agregarFavorito: (name) => {
+				console.log(name);
+			const objeto={
+				id:getStore().length, name
+			}
+				setStore({ favoritos: [...getStore().favoritos, name] });
+								
+					
+			
 			},
-			loadSomeDataCristian: () => {
+			getDetails: async (type, id) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+
+				if (type !== "characters") {
+					const data = await fetch("https://swapi.dev/api/" + type + "/" + id);
+					const response = await data.json();
+					setStore({ details: response })
+				} else {
+					const data = await fetch("https://swapi.dev/api/people/" + id);
+					const response = await data.json();
+					setStore({ details: response })
+				}
+
+
+
 			},
 			changeColor: (index, color) => {
 				//get the store
