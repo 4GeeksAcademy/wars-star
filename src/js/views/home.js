@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import Vehicles from "../component/vehicles"
 
 import { Navbar } from "../component/navbar";
-import Vehicles from "../component/vehicles";
 import Characters from "../component/characters";
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -21,7 +20,19 @@ export const Home = () => {
 
 
 	return (
-		<div className="text-center mt-5 container ">
+		<div className="mt-5">
+			<h1 className="text-danger d-flex justify-content-center my-3">Characters</h1>
+			<div className="row d-flex justify-content-center">
+				{store.characters.map((item, index) => (
+						<Characters
+							name={item.name}
+							gender={item.gender}
+							haircolor={item.hair_color}
+							eyecolor={item.eye_color}
+							id={index + 1}
+						/>
+				))}
+			</div>
 
 			<ul className=" m-0 p-0 d-flex flex-wrap horizontal-scrollable" id="contact-list"  >
 				{store.Planets.map((item, index) => (
