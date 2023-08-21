@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from "react"
 import { Context } from "../store/appContext"
 import Planets from "./planets"
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 
@@ -20,9 +21,9 @@ const Vehicles = (props) => {
             <div className="card-body">
 
                 <h5 className="card-title text-left text-black">{props.name}</h5>
-                <p className="card-text">{props.model}</p>
-                <p className="card-text">{props.passengers}</p>
-                <a href="#" className="btn btn-outline-primary">Learn more!</a>
+                <p className="card-text  text-left" >{props.model}</p>
+                <p className="card-text">Cantidad de pasajeros: {props.passengers}</p>
+                <Link to="/" className="btn btn-outline-primary">Learn more!</Link>
                 <button type="button" className="btn btn-outline-warning position-absolute bottom-0 end-0 my-3 me-2"><i class="fa fa-heart"></i></button>
             </div>
         </div>
