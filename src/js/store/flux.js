@@ -14,7 +14,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			],
+			], 
+
+			characters: []
+			,
 
 			vehiculos: []
 
@@ -43,10 +46,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-			loadSomeDataCecilia: () => {
+			obtenerPersonajes: async () => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+
+				try {
+					let response = await fetch("https://swapi.dev/api/people"); //especificamos la url donde vamos a buscar info
+					let data = await response.json()
+					console.log(data);
+					setStore({characters: data.results})
+					
+				} catch (error) {
+					console.log(error)
+					
+				}
 			},
 			obtenerplanetas: async function () {
 				//accion, funcion que puedo volver a utilizar cuando quiera
