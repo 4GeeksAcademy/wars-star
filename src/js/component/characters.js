@@ -7,6 +7,12 @@ import PropTypes from "prop-types";
 const Characters = props => {
     const {store, actions} = useContext(Context); // para manejar data de flux
     
+    // function handleFavorito(name) {
+    //     actions.agregarFavorito()   
+    
+        
+    // }
+    
     return (
         
             <div class="card col-2 px-0 mx-3 mb-3" style={{width: "18rem;"}}>
@@ -18,7 +24,7 @@ const Characters = props => {
                     <p class="card-text">Eye Color: <span>{props.eyecolor}</span></p>
                     <div className="d-flex justify-content-between">
                         <Link to={"/details/characters/" + props.id} class="btn btn-outline-primary">Learn More!</Link>
-                        <button className="btn btn-outline-warning">
+                        <button className="btn btn-outline-warning" onClick={()=> actions.agregarFavorito(props.name)}>
                             <i class="fa fa-heart"></i>
                         </button>
                     </div>
