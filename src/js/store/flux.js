@@ -3,6 +3,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			details: [],
 			Planets: [],
+
+			favoritos: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -74,10 +76,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log(error);
 				}
 			},
-			loadSomeDataAgustin: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+			agregarFavorito: (name) => {
+				console.log(name);
+			const objeto={
+				id:getStore().length, name
+			}
+				setStore({ favoritos: [...getStore().favoritos, name] });
+								
+					
+			
 			},
 			getDetails: async (type, id) => {
 				/**
