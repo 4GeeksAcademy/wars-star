@@ -60,9 +60,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			loadSomeDataAgustin: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+				function favorito() {
+					e.preventDefault()
+					
+					
+				}
 			},
 			loadSomeDataCristian: () => {
 				/**
