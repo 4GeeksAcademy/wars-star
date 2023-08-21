@@ -47,21 +47,23 @@ export const Home = () => {
 
 
 			{/* //vechículos */}
-			<ul className= "d-flex overflow-x-scroll" >
-		
+			<h1 className="text-danger d-flex justify-content-center my-3">Vehicles</h1>
+
+			<div className="row d-flex justify-content-center">
+
 			{store.vehiculos.map((item, index) =>
-				<li>
+				
 				<Vehicles
 					name={item.name}
 					model={item.model}
 					passengers={item.passengers}
-					id={index}
+					id={index + 1}
 				/>
-				</li>
+				
 
 			)}
 
-</ul>
+</div>
 
 
 		</div>
