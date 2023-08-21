@@ -2,11 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext.js";
 import { Link } from "react-router-dom";
-import { Navbar } from "../component/navbar";
 import Planets from "../component/planets";
 import Vehicles from "../component/vehicles";
-import Characters from "../component/characters";
-
 import { Navbar } from "../component/navbar";
 import Characters from "../component/characters";
 export const Home = () => {
