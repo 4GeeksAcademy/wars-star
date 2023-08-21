@@ -18,14 +18,14 @@ const Planets = props => {
     return (
         <>
             <div>
-                <div className="card" style={{ width: "18rem" }}>
+                <div className="card col-2 px-0 mx-3 mb-3" style={{ width: "18rem" }}>
                     <img src={"https://starwars-visualguide.com/assets/img/planets/" + (props.id + 1) + ".jpg"} className="card-img-top" alt="..." />
                     <div className="card-body m-0 p-0" style={{ height: "170px" }}>
-                        <h5 className="card-title fs-4 text">{props.name}</h5>
-                        <p className="card-text text-start">{props.population}</p>
-                        <p className="card-text text-start">{props.name}</p>
-                        <Link href="#" className="btn border-primary position-absolute bottom-0 start-0  m-2 text-primary">Learn more!</Link>
-                        <Link href="#" className="btn position-absolute bottom-0 end-0 m-2 border-warning"><i className="fa fa-heart text-warning border-warning"></i></Link>
+                        <h5 className="card-title fs-4 text my-2 mx-2">{props.name}</h5>
+                        <p className="card-text text-start mx-2 p-0 my-0"><b>Population: </b>{props.population}</p>
+                        <p className="card-text text-start mx-2 "><b>Terrain: </b>{props.terrain}</p>
+                        <Link href="#" className="btn position-absolute bottom-0 start-0  m-2 btn-outline-primary ">Learn more!</Link>
+                        <button className="btn position-absolute bottom-0 end-0 m-2 btn-outline-warning"><i className="fa fa-heart"></i></button>
                     </div>
                 </div>
             </div>

@@ -23,17 +23,17 @@ export const Home = () => {
 			<h1 className="text-danger d-flex justify-content-center my-3">Characters</h1>
 			<div className="row d-flex justify-content-center">
 				{store.characters.map((item, index) => (
-						<Characters
-							name={item.name}
-							gender={item.gender}
-							haircolor={item.hair_color}
-							eyecolor={item.eye_color}
-							id={index + 1}
-						/>
+					<Characters
+						name={item.name}
+						gender={item.gender}
+						haircolor={item.hair_color}
+						eyecolor={item.eye_color}
+						id={index + 1}
+					/>
 				))}
 			</div>
-
-			<ul className=" m-0 p-0 d-flex flex-wrap horizontal-scrollable" id="contact-list"  >
+			<h1 className="text-danger d-flex justify-content-center my-3">Planets</h1>
+			<div className=" m-0 p-0 d-flex flex-wrap horizontal-scrollable" id="contact-list"  >
 				{store.Planets.map((item, index) => (
 					<Planets
 						name={item.name}
@@ -42,7 +42,7 @@ export const Home = () => {
 						id={index}
 					/>
 				))}
-			</ul>
+			</div>
 
 
 			{/* //vechículos */}
