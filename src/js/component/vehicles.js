@@ -14,7 +14,7 @@ const Vehicles = (props) => {
 
     return (
 
-        <div className="card" style={{ width: "18rem" }}>
+        <div className="card card col-2 px-0 mx-3 mb-3" style={{ width: "18rem" }}>
 
             <img src="https://files.cults3d.com/uploaders/4434823/illustration-file/1450688883-1419-6018/Capture_d_e_cran_2015-12-21_a__10.03.30.png" className="card-img-top img-thumbnail" style={{ width: "400" }} alt="..." />
             <div className="card-body">
