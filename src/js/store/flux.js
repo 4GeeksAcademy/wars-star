@@ -76,14 +76,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			agregarFavorito: (name) => {
-				console.log(name);
-			const objeto={
-				id:getStore().length, name
-			}
+				
+			
 				setStore({ favoritos: [...getStore().favoritos, name] });
 								
 					
 			
+			},
+
+			eliminarFavorito:(name)=> {
+				
+				const arr= getStore().favoritos.filter((name2)=>
+			 
+			 name2!==name)
+			 setStore({ favoritos: arr });
+				
+
 			},
 			
 			loadSomeDataCristian: () => {
