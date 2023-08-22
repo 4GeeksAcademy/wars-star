@@ -17,16 +17,16 @@ const Vehicles = (props) => {
 
     return (
 
-        <div class="card col-2 px-0 mx-3 mb-3 " style={{ width: "18rem;" }}>
+        <div class="card col-2 px-0 mx-3 mb-3 bg-black text-white border-light " style={{ width: "18rem;" }}>
             <img id="imgstyles" src={props.id <= 10 ? images[props.id - 1] : ""} className="card-img-top img-thumbnail" alt="..." />
             <div className="card-body">
 
-                <h5 className="card-title text-left text-black">{props.name}</h5>
+                <h5 className="card-title text-left text-white">{props.name}</h5>
                 <p className="card-text  text-left" >{props.model}</p>
                 <p className="card-text">Cantidad de pasajeros: {props.passengers}</p>
                 <div className="d-flex justify-content-between">
                     <Link to={"/details/vehicles/" + props.id} className="btn btn-outline-primary">Learn more!</Link>
-                    <button type="button" className="btn btn-outline-warning "><i class="fa fa-heart"></i></button>
+                    <button type="button" className="btn btn-outline-warning "onClick={() => actions.agregarFavorito(props.name)}><i class="fa fa-heart"></i></button>
                 </div>
             </div>
         </div>

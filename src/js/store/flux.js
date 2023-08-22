@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
-				try {git
+				try {
 					let response = await fetch("https://swapi.dev/api/vehicles", {
 						method: "GET"
 					});
@@ -77,14 +77,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			agregarFavorito: (name) => {
-				console.log(name);
-			const objeto={
-				id:getStore().length, name
-			}
+				
+			
 				setStore({ favoritos: [...getStore().favoritos, name] });
 								
 					
 			
+			},
+			eliminarFavorito:(name)=>{
+				const arr= getStore().favoritos.filter((name2)=>
+				name2!==name)
+				setStore({ favoritos: arr});
+				
 			},
 			getDetails: async (type, id) => {
 				/**
