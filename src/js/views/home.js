@@ -19,7 +19,7 @@ export const Home = () => {
 
 
 	return (
-		<div className="mt-5">
+		<div className="mt-5 bg-white">
 			<h1 className="text-danger d-flex justify-content-center my-3">Characters</h1>
 			<div className="row d-flex justify-content-center">
 				{store.characters.map((item, index) => (

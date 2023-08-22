@@ -84,7 +84,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					
 			
 			},
-			
+			eliminarFavorito:(name)=>{
+				const arr= getStore().favoritos.filter((name2)=>
+				name2!==name)
+				setStore({ favoritos: arr});
+				
+			},
 			getDetails: async (type, id) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
