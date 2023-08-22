@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
-				try {
+				try {git
 					let response = await fetch("https://swapi.dev/api/vehicles", {
 						method: "GET"
 					});

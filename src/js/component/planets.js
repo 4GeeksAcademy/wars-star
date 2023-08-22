@@ -26,7 +26,7 @@ const Planets = props => {
                         <h5 className="card-title fs-4 text my-2 mx-2">{props.name}</h5>
                         <p className="card-text text-start mx-2 p-0 my-0"><b>Population: </b>{props.population}</p>
                         <p className="card-text text-start mx-2 "><b>Terrain: </b>{props.terrain}</p>
-                        <Link className="btn position-absolute bottom-0 start-0  m-2 btn-outline-primary ">Learn more!</Link>
+                        <Link to={"/details/planets/" + props.id} className="btn position-absolute bottom-0 start-0  m-2 btn-outline-primary ">Learn more!</Link>
                         <button className="btn position-absolute bottom-0 end-0 m-2 btn-outline-warning"><i className="fa fa-heart"></i></button>
                     </div>
                 </div>

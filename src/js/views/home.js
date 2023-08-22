@@ -30,7 +30,7 @@ export const Home = () => {
 						eyecolor={item.eye_color}
 						id={index + 1}
 					/>
-				))}
+				))},
 			</div>
 			<h1 className="text-danger d-flex justify-content-center my-3">Planets</h1>
 			<div className=" m-0 p-0 d-flex flex-wrap horizontal-scrollable" id="contact-list"  >
@@ -46,16 +46,23 @@ export const Home = () => {
 
 
 			{/* //vechículos */}
-			{store.vehiculos.map((item, index) =>
+			<h1 className="text-danger d-flex justify-content-center my-3">Vehicles</h1>
 
+			<div className="row d-flex justify-content-center">
+
+			{store.vehiculos.map((item, index) =>
+				
 				<Vehicles
 					name={item.name}
 					model={item.model}
 					passengers={item.passengers}
-					id={index}
+					id={index + 1}
 				/>
+				
 
 			)}
+
+</div>
 
 
 		</div>
