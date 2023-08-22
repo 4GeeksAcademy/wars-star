@@ -16,9 +16,9 @@ const Planets = props => {
 
 
     return (
-        <>
-            <div>
-                <div className="card col-2 px-0 mx-3 mb-3" style={{ width: "18rem" }}>
+        
+            
+                <div className="card col-2 px-0 mx-3 mb-3 bg-black text-white border-light" style={{ width: "19.7rem" }}>
                     {props.id === 0 ?
                         <img src={"https://static.wikia.nocookie.net/esstarwars/images/b/b0/Tatooine_TPM.png"} className="card-img-top" alt="..." /> :
                         <img src={"https://starwars-visualguide.com/assets/img/planets/" + (props.id + 1) + ".jpg"} className="card-img-top" alt="..." />}
@@ -30,8 +30,8 @@ const Planets = props => {
                         <button className="btn position-absolute bottom-0 end-0 m-2 btn-outline-warning" onClick={() => actions.agregarFavorito(props.name)}><i className="fa fa-heart"></i></button>
                     </div>
                 </div>
-            </div>
-        </>
+            
+       
     )
 }
 
