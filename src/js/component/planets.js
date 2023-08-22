@@ -18,8 +18,10 @@ const Planets = props => {
     return (
         <>
             <div>
-                <div className="card col-2 px-0 mx-3 mb-3 bg-black text-white border-light" style={{ width: "18rem" }}>
-                    <img src={"https://starwars-visualguide.com/assets/img/planets/" + (props.id + 1) + ".jpg"} className="card-img-top" alt="..." />
+                <div className="card col-2 px-0 mx-3 mb-3" style={{ width: "18rem" }}>
+                    {props.id === 0 ?
+                        <img src={"https://static.wikia.nocookie.net/esstarwars/images/b/b0/Tatooine_TPM.png"} className="card-img-top" alt="..." /> :
+                        <img src={"https://starwars-visualguide.com/assets/img/planets/" + (props.id + 1) + ".jpg"} className="card-img-top" alt="..." />}
                     <div className="card-body m-0 p-0" style={{ height: "170px" }}>
                         <h5 className="card-title fs-4 text my-2 mx-2">{props.name}</h5>
                         <p className="card-text text-start mx-2 p-0 my-0"><b>Population: </b>{props.population}</p>

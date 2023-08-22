@@ -17,7 +17,7 @@ const Characters = props => {
 
         <div class="card col-2 px-0 mx-3 mb-3 bg-black text-white border-light" style={{ width: "18rem;" }}>
             <img src={"https://starwars-visualguide.com/assets/img/characters/" + props.id + ".jpg"} class="card-img-top mx-0" alt="..." />
-            <div class="card-body">
+            <div class="card-body ">
                 <h5 class="card-title">{props.name}</h5>
                 <p class="card-text my-0">Gender: <span>{props.gender}</span></p>
                 <p class="card-text my-0" id="p-datos">Hair Color: <span>{props.haircolor}</span></p>
